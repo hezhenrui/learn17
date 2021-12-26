@@ -24,6 +24,12 @@ spring:
     username: guest
     password: guest
     port: 5672
+  curator:
+    retryCount: 5  #重试次数
+    elapsedTimeMs: 5000   #重试间隔时间
+    connectString: 127.0.0.1:2181   #zookeeper地址
+    sessionTimeoutMs: 60000  #session超时时间
+    connectionTimeoutMs: 15000  #连接超时时间
 mybatis:
   type-aliases-package: com.hezhenrui.domain.*
   mapper-locations: classpath*:mapper/*.xml
