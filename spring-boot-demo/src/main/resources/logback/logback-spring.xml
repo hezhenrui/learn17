@@ -75,9 +75,5 @@
         <appender-ref ref="errorlog" />
     </root>
 
-    <!--输出jdbc 事务相关信息-->
-    <logger name="org.springframework.jdbc" level="debug">
-    </logger>
-
 
 </configuration>
