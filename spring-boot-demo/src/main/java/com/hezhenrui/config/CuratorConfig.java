@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
+/**
+ * zookeeper分布式锁配置
+ */
 @Component
 public class CuratorConfig {
     @Value("${spring.curator.retryCount}")
