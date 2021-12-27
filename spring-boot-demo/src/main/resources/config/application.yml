@@ -36,3 +36,14 @@ mybatis:
   configuration:
     auto-mapping-behavior: partial
     map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  config: classpath:logback/logback-spring.xml
+  exception-conversion-word: '%wEx'
+  level:
+    root: info
+    com.hezhenrui: debug
+  file:
+    name: ${spring.application.name}.log
+    path: ./logs/${spring.application.name}/
