@@ -6,13 +6,18 @@ public class CCS {
 
     public static void main(String[] args) throws InterruptedException {
 
-        CountDownLatch countDownLatch = new CountDownLatch(5);
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 10, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue());
-        for (int i=0;i<10;i++){
-            threadPoolExecutor.execute(new CountDownLatchTest(countDownLatch));
+//        CountDownLatch countDownLatch = new CountDownLatch(5);
+//        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 10, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue());
+//        for (int i=0;i<10;i++){
+//            threadPoolExecutor.execute(new CountDownLatchTest(countDownLatch));
+//        }
+//        countDownLatch.await();
+//        System.out.println("countDownLatch好了");
+
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(5);
+        for (int i=0;i<5;i++){
+            Executors.newFixedThreadPool(5).submit(new CyclicBarrierTest(cyclicBarrier));
         }
-        countDownLatch.await();
-        System.out.println("好了");
     }
 
     public static class CountDownLatchTest implements Runnable{
@@ -63,15 +68,16 @@ public class CCS {
         public void run() {
             System.out.println("线程"+Thread.currentThread().getName()+"正在写入数据...");
             try {
-                Thread.sleep(5000);      //以睡眠来模拟写入数据操作
                 System.out.println("线程"+Thread.currentThread().getName()+"写入数据完毕，等待其他线程写入完毕");
                 cyclicBarrier.await();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }catch(BrokenBarrierException e){
+                System.out.println("线程"+Thread.currentThread().getName()+"第一次屏障结束");
+                cyclicBarrier.await();
+                System.out.println("线程"+Thread.currentThread().getName()+"第二次屏障结束");
+                cyclicBarrier.await();
+                System.out.println("线程"+Thread.currentThread().getName()+"第三次次屏障结束");
+            } catch (InterruptedException | BrokenBarrierException e) {
                 e.printStackTrace();
             }
-            System.out.println("所有线程写入完毕，继续处理其他任务...");
         }
     }
 

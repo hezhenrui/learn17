@@ -10,20 +10,24 @@ import java.util.concurrent.Phaser;
  */
 public class PhaserLock {
 
+    private static final int parties = 4;
+
 
     public static void main(String[] args) {
-        Phaser phaser = new MyPhaser();
-        ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
-        for (int i = 0; i < 4; i++) {
-            phaser.register();
+        Phaser childrenPhaser = new MyPhaser();
+        Phaser phaser = new MyPhaser(childrenPhaser);
+
+        ExecutorService executorService = Executors.newFixedThreadPool(parties);
+        for (int i = 0; i < parties; i++) {
             executorService.submit(() -> {
-                System.out.println("a"+ Thread.currentThread().getName());
+                phaser.register();
+                System.out.println("a" + Thread.currentThread().getName());
                 phaser.arriveAndAwaitAdvance();
-                System.out.println("b"+ Thread.currentThread().getName());
+                System.out.println("b" + Thread.currentThread().getName());
                 phaser.arriveAndAwaitAdvance();
-                System.out.println("c"+ Thread.currentThread().getName());
+                System.out.println("c" + Thread.currentThread().getName());
                 phaser.arriveAndAwaitAdvance();
-                System.out.println("d"+ Thread.currentThread().getName());
+                System.out.println("d" + Thread.currentThread().getName());
                 phaser.arriveAndAwaitAdvance();
             });
         }
@@ -31,9 +35,16 @@ public class PhaserLock {
 
     public static class MyPhaser extends Phaser {
 
+        public MyPhaser() {
+        }
+
+        public MyPhaser(Phaser parent) {
+            super(parent);
+        }
+
         /**
          * return false结果
-         *
+         * <p>
          * a0
          * a3
          * a2
