@@ -1,7 +1,7 @@
 package com.hezhenrui.controller;
 
 import com.hezhenrui.domain.InventoryStatement;
-import com.hezhenrui.mapper.InventoryStatementMapper;
+import com.hezhenrui.mapper.test.InventoryStatementMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.recipes.locks.InterProcessMutex;

@@ -1,7 +1,7 @@
 package com.hezhenrui.service.Impl;
 
 import com.hezhenrui.domain.Person;
-import com.hezhenrui.mapper.PersonMapper;
+import com.hezhenrui.mapper.test.PersonMapper;
 import com.hezhenrui.service.MybatisCaseService;
 import org.springframework.stereotype.Service;
 

@@ -2,7 +2,7 @@
 //
 //import cn.hutool.core.convert.Convert;
 //import cn.hutool.core.util.IdUtil;
-//import com.hezhenrui.mapper.InventoryStatementMapper;
+//import com.hezhenrui.mapper.test.InventoryStatementMapper;
 //import org.redisson.api.RLock;
 //import org.redisson.api.RedissonClient;
 //import org.springframework.beans.factory.annotation.Autowired;

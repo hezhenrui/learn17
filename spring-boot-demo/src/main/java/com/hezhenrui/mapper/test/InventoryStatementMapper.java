@@ -1,4 +1,4 @@
-package com.hezhenrui.mapper;
+package com.hezhenrui.mapper.test;
 
 import com.hezhenrui.domain.InventoryStatement;
 import java.util.List;
