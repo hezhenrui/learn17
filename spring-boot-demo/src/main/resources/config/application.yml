@@ -35,6 +35,12 @@ spring:
     connectString: 127.0.0.1:2181   #zookeeper地址
     sessionTimeoutMs: 60000  #session超时时间
     connectionTimeoutMs: 15000  #连接超时时间
+
+rocketmq:
+  name-server: 127.0.0.1:9876
+  producer:
+    group: transcation-group
+
 mybatis:
   type-aliases-package: com.hezhenrui.domain.*
   mapper-locations: classpath*:mapper/*.xml
