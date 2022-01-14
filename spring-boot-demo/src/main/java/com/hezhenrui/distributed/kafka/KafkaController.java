@@ -2,6 +2,8 @@ package com.hezhenrui.distributed.kafka;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -9,10 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2022-01-11
  */
 @RestController
+@RequestMapping("kafkaController")
 public class KafkaController {
 
     @Autowired
     KafkaTemplate kafkaTemplate;
+
+    @GetMapping("sendMessage")
+    public void sendMessage(){
+    }
 
 
 }
