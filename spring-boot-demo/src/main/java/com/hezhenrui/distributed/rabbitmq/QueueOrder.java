@@ -12,19 +12,30 @@ import org.springframework.stereotype.Component;
 public class QueueOrder {
 
     @RabbitListener(bindings = @QueueBinding(
-            value = @Queue(value = "queueName", durable = "true", autoDelete = "true"),
-            exchange = @Exchange(value = "testExchange"),
+            value = @Queue(value = "demo01", durable = "true", autoDelete = "true"),
+            exchange = @Exchange(value = "amq.direct"),
             key = "queue.demo.test01")
     )
     public void queueDemoTest01(@Payload String i) {
+        System.out.println("queue.demo.test01" + i);
     }
 
     @RabbitListener(bindings = @QueueBinding(
-            value = @Queue(value = "queueName", durable = "true", autoDelete = "true"),
-            exchange = @Exchange(value = "testExchange"),
+            value = @Queue(value = "demo01", durable = "true", autoDelete = "true"),
+            exchange = @Exchange(value = "amq.direct"),
             key = "queue.demo.test02")
     )
     public void queueDemoTest02(@Payload String i) {
+        System.out.println("queue.demo.test02" + i);
+    }
+
+    @RabbitListener(bindings = @QueueBinding(
+            value = @Queue(value = "demo02", durable = "true", autoDelete = "true"),
+            exchange = @Exchange(value = "amq.direct"),
+            key = "queue.demo.test02")
+    )
+    public void queueDemoTest03(@Payload String i) {
+        System.out.println("queue.demo.test03" + i);
     }
 }
 

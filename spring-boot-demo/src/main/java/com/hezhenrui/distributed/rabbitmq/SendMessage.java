@@ -21,8 +21,8 @@ public class SendMessage {
     @RequestMapping("sendMessageOO")
     public void sendMessageOO() {
         for (int i=0;i<100;i++){
-            amqpTemplate.convertAndSend("exchange", "queue.demo.test01", i);
-            amqpTemplate.convertAndSend("exchange", "queue.demo.test02", i);
+            amqpTemplate.convertAndSend("amq.direct", "queue.demo.test01", i);
+            amqpTemplate.convertAndSend("amq.direct", "queue.demo.test02", i);
         }
     }
 }
