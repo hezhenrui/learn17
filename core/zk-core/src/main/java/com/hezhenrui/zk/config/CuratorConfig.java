@@ -1,4 +1,4 @@
-package com.hezhenrui.demo.config;
+package com.hezhenrui.zk.config;
 
 import org.apache.curator.RetryPolicy;
 import org.apache.curator.framework.CuratorFramework;
@@ -13,15 +13,15 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class CuratorConfig {
-    @Value("${spring.curator.retryCount}")
+    @Value("${spring.curator.retry-count}")
     private int retryCount;
-    @Value("${spring.curator.elapsedTimeMs}")
+    @Value("${spring.curator.elapsed-time-ms}")
     private int elapsedTimeMs;
-    @Value("${spring.curator.connectString}")
+    @Value("${spring.curator.connect-string}")
     private String connectString;
-    @Value("${spring.curator.sessionTimeoutMs}")
+    @Value("${spring.curator.session-timeout-ms}")
     private int sessionTimeoutMs;
-    @Value("${spring.curator.connectionTimeoutMs}")
+    @Value("${spring.curator.connection-timeout-ms}")
     private int connectionTimeoutMs;
 
     @Bean
