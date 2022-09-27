@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: spring-boot-demo
+    name: demo
   datasource:
     ds1:
       jdbc-url: jdbc:mysql://localhost:3306/test?autoReconnect=true&useSSL=false&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull&failOverReadOnly=false&serverTimezone=GMT%2B8
@@ -54,11 +54,11 @@ spring:
       # COUNT_TIME	TIME或COUNT满足其中一个时提交
       ack-mode: manual_immediate
   curator:
-    retryCount: 5  #重试次数
-    elapsedTimeMs: 5000   #重试间隔时间
-    connectString: 127.0.0.1:2181   #zookeeper地址
-    sessionTimeoutMs: 60000  #session超时时间
-    connectionTimeoutMs: 15000  #连接超时时间
+    retry-count: 5  #重试次数
+    elapsed-time-ms: 5000   #重试间隔时间
+    connect-string: 127.0.0.1:2181   #zookeeper地址
+    session-timeout-ms: 60000  #session超时时间
+    connection-timeout-ms: 15000  #连接超时时间
 
 rocketmq:
   name-server: 127.0.0.1:9876

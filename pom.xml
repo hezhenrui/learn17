@@ -32,6 +32,7 @@
         <rocketmq.version>2.2.1</rocketmq.version>
         <fastjson.version>1.2.79</fastjson.version>
         <common.io.version>2.6</common.io.version>
+        <redisson.version>3.16.4</redisson.version>
     </properties>
 
     <dependencyManagement>
@@ -49,11 +50,11 @@
                 <version>${easyexcel.version}</version>
             </dependency>
 
-            <!--        <dependency>-->
-            <!--            <groupId>org.redisson</groupId>-->
-            <!--            <artifactId>redisson-spring-boot-starter</artifactId>-->
-            <!--            <version>3.16.4</version>-->
-            <!--        </dependency>-->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.apache.curator</groupId>
