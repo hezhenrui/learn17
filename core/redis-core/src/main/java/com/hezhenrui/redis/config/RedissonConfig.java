@@ -3,22 +3,29 @@ package com.hezhenrui.redis.config;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
+import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Configuration;
+
+import java.util.List;
 
 /**
  * redisson集群配置
  */
-@Component
+@Configuration
 public class RedissonConfig {
+
+    private final RedisProperties redisProperties;
+
+    public RedissonConfig(RedisProperties redisProperties) {
+        this.redisProperties = redisProperties;
+    }
 
     @Bean
     public RedissonClient redissonClient() {
         Config config = new Config();
-        config.useClusterServers().setScanInterval(2000)
-                .addNodeAddress("redis://127.0.0.1:6379", "redis://127.0.0.1:6380")
-                .addNodeAddress("redis://127.0.0.1:6381", "redis://127.0.0.1:6382")
-                .addNodeAddress("redis://127.0.0.1:6383", "redis://127.0.0.1:6384");
+        List<String> nodes = redisProperties.getCluster().getNodes();
+        config.useClusterServers().addNodeAddress(nodes.toArray(new String[nodes.size()]));
         return Redisson.create(config);
     }
 }

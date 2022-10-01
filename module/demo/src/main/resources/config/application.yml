@@ -53,6 +53,16 @@ spring:
       # COUNT	当每一批poll()的数据被消费者监听器（ListenerConsumer）处理之后，被处理record数量大于等于COUNT时提交
       # COUNT_TIME	TIME或COUNT满足其中一个时提交
       ack-mode: manual_immediate
+  redis:
+    cluster:
+      nodes: "redis://127.0.0.1:6379,redis://127.0.0.1:6380,redis://127.0.0.1:6381,redis://127.0.0.1:6382,redis://127.0.0.1:6383,redis://127.0.0.1:6384"
+    lettuce:
+      pool:
+        max-active: 1500
+        max-wait: 5000
+        max-idle: 500
+        min-idle: 100
+    timeout: 60000
   curator:
     retry-count: 5  #重试次数
     elapsed-time-ms: 5000   #重试间隔时间
@@ -71,7 +81,6 @@ mybatis:
   configuration:
     auto-mapping-behavior: partial
     map-underscore-to-camel-case: true
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 logging:
   config: classpath:logback/logback-spring.xml

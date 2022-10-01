@@ -1,7 +1,0 @@
-spring:
-  curator:
-    retry-count: 5  #重试次数
-    elapsed-time-ms: 5000   #重试间隔时间
-    connect-string: 127.0.0.1:2181   #zookeeper地址
-    session-timeout-ms: 60000  #session超时时间
-    connection-timeout-ms: 15000  #连接超时时间

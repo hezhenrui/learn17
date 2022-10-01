@@ -12,6 +12,7 @@
     <modules>
         <module>zk-core</module>
         <module>redis-core</module>
+        <module>thread-core</module>
     </modules>
 
     <artifactId>core</artifactId>
