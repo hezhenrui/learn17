@@ -13,6 +13,7 @@
         <module>zk-core</module>
         <module>redis-core</module>
         <module>thread-core</module>
+        <module>db-core</module>
     </modules>
 
     <artifactId>core</artifactId>

@@ -1,5 +1,7 @@
 package com.hezhenrui.demo.controller;
 
+import com.hezhenrui.demo.domain.test1.TblDemo;
+import com.hezhenrui.demo.mapper.test1.TblDemoMapper;
 import com.hezhenrui.thread.enums.ThreadPoolEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.framework.CuratorFramework;
@@ -13,11 +15,13 @@ import java.util.concurrent.TimeUnit;
 @RestController
 @Slf4j
 public class CuratorLockController {
-
+    
+    private final TblDemoMapper tblDemoMapper;
 
     private final CuratorFramework client;
 
-    public CuratorLockController(CuratorFramework client) {
+    public CuratorLockController(TblDemoMapper tblDemoMapper, CuratorFramework client) {
+        this.tblDemoMapper = tblDemoMapper;
         this.client = client;
     }
 
@@ -31,7 +35,9 @@ public class CuratorLockController {
     @GetMapping("/lock")
     public void lock() throws Exception {
         CompletableFuture.runAsync(()-> log.info("1"), ThreadPoolEnum.IO.getInstance());
-
+        TblDemo tblDemo = new TblDemo();
+        tblDemo.setId(1);
+        TblDemo rs = tblDemoMapper.selectOne(tblDemo);
         // Zk分布式锁
         InterProcessMutex lock = new InterProcessMutex(client, "/lock/lockCount");
 

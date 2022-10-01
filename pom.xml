@@ -36,6 +36,9 @@
         <zk-core.version>1.0.0</zk-core.version>
         <redis-core.version>1.0.0</redis-core.version>
         <thread-core.version>1.0.0</thread-core.version>
+        <db-core.version>1.0.0</db-core.version>
+        <common.version>1.0.0</common.version>
+        <tk.mybatis.version>4.2.1</tk.mybatis.version>
     </properties>
 
     <dependencyManagement>
@@ -78,6 +81,12 @@
             </dependency>
 
             <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>${tk.mybatis.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>${common.io.version}</version>
@@ -92,20 +101,32 @@
 
             <dependency>
                 <groupId>com.hezhenrui</groupId>
+                <artifactId>common</artifactId>
+                <version>${common.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.hezhenrui</groupId>
                 <artifactId>zk-core</artifactId>
-                <version>1.0.0</version>
+                <version>${zk-core.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.hezhenrui</groupId>
                 <artifactId>redis-core</artifactId>
-                <version>1.0.0</version>
+                <version>${redis-core.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.hezhenrui</groupId>
                 <artifactId>thread-core</artifactId>
-                <version>1.0.0</version>
+                <version>${thread-core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.hezhenrui</groupId>
+                <artifactId>db-core</artifactId>
+                <version>${db-core.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

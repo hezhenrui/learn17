@@ -91,3 +91,7 @@ hezhenrui:
     keep-alive-time: 20000
     thread-name-prefix: hezhenrui-demo-exec-
     capacity: 50
+  mapper:
+    base-packages:
+      test: com.hezhenrui.demo.mapper.test
+      test1: com.hezhenrui.demo.mapper.test1

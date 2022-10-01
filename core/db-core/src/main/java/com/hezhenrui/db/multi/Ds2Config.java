@@ -1,20 +1,18 @@
-package com.hezhenrui.demo.config.multi;
+package com.hezhenrui.db.multi;
 
 import com.zaxxer.hikari.HikariDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-
-import javax.sql.DataSource;
+import tk.mybatis.spring.annotation.MapperScan;
 
 @Configuration
-@MapperScan(basePackages ="com.hezhenrui.mapper.test1", sqlSessionTemplateRef  = "ds2SqlSessionTemplate")
+@MapperScan(basePackages ="com.hezhenrui.demo.mapper.test1", sqlSessionTemplateRef  = "ds2SqlSessionTemplate")
 public class Ds2Config {
 
     //ds2数据源

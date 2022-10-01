@@ -1,4 +1,4 @@
-package com.hezhenrui.demo.config.multi;
+package com.hezhenrui.db.multi;
 
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.boot.context.properties.ConfigurationProperties;
