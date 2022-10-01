@@ -1,11 +1,13 @@
 package com.hezhenrui.demo.controller;
 
+import com.hezhenrui.thread.enums.ThreadPoolEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.recipes.locks.InterProcessMutex;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
 @RestController
@@ -28,6 +30,8 @@ public class CuratorLockController {
 
     @GetMapping("/lock")
     public void lock() throws Exception {
+        CompletableFuture.runAsync(()-> log.info("1"), ThreadPoolEnum.IO.getInstance());
+
         // Zk分布式锁
         InterProcessMutex lock = new InterProcessMutex(client, "/lock/lockCount");
 

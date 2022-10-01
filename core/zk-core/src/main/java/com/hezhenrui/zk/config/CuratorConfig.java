@@ -5,7 +5,6 @@ import org.apache.curator.RetryPolicy;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.ExponentialBackoffRetry;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -14,26 +13,21 @@ import org.springframework.context.annotation.Configuration;
  */
 @Data
 @Configuration
-@ConfigurationProperties(prefix = "spring.curator")
 public class CuratorConfig {
 
-    private int retryCount;
+    private final CuratorProperties curatorProperties;
 
-    private int elapsedTimeMs;
-
-    private String connectString;
-
-    private int sessionTimeoutMs;
-
-    private int connectionTimeoutMs;
+    public CuratorConfig(CuratorProperties curatorProperties) {
+        this.curatorProperties = curatorProperties;
+    }
 
     @Bean
     public CuratorFramework curatorFramework() {
-        RetryPolicy retryPolicy = new ExponentialBackoffRetry(elapsedTimeMs, retryCount);
+        RetryPolicy retryPolicy = new ExponentialBackoffRetry(curatorProperties.getElapsedTimeMs(), curatorProperties.getElapsedTimeMs());
         CuratorFramework client = CuratorFrameworkFactory.newClient(
-                connectString,
-                sessionTimeoutMs,
-                connectionTimeoutMs,
+                curatorProperties.getConnectString(),
+                curatorProperties.getSessionTimeoutMs(),
+                curatorProperties.getConnectionTimeoutMs(),
                 retryPolicy);
         client.start();
         return client;

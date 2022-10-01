@@ -56,12 +56,6 @@ spring:
   redis:
     cluster:
       nodes: "redis://127.0.0.1:6379,redis://127.0.0.1:6380,redis://127.0.0.1:6381,redis://127.0.0.1:6382,redis://127.0.0.1:6383,redis://127.0.0.1:6384"
-    lettuce:
-      pool:
-        max-active: 1500
-        max-wait: 5000
-        max-idle: 500
-        min-idle: 100
     timeout: 60000
   curator:
     retry-count: 5  #重试次数
@@ -91,3 +85,9 @@ logging:
   file:
     name: ${spring.application.name}.log
     path: ./logs/${spring.application.name}/
+
+hezhenrui:
+  thread-core:
+    keep-alive-time: 20000
+    thread-name-prefix: hezhenrui-demo-exec-
+    capacity: 50

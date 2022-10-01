@@ -33,6 +33,9 @@
         <fastjson.version>1.2.79</fastjson.version>
         <common.io.version>2.6</common.io.version>
         <redisson.version>3.16.4</redisson.version>
+        <zk-core.version>1.0.0</zk-core.version>
+        <redis-core.version>1.0.0</redis-core.version>
+        <thread-core.version>1.0.0</thread-core.version>
     </properties>
 
     <dependencyManagement>
@@ -85,6 +88,24 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.hezhenrui</groupId>
+                <artifactId>zk-core</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.hezhenrui</groupId>
+                <artifactId>redis-core</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.hezhenrui</groupId>
+                <artifactId>thread-core</artifactId>
+                <version>1.0.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
