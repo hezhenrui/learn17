@@ -11,16 +11,4 @@ public interface TblNewDemoRelationMapper extends Mapper<TblNewDemoRelation> {
     int updateBatchSelective(List<TblNewDemoRelation> list);
 
     int batchInsert(@Param("list") List<TblNewDemoRelation> list);
-
-    int deleteByPrimaryKey(Integer id);
-
-    int insert(TblNewDemoRelation record);
-
-    int insertSelective(TblNewDemoRelation record);
-
-    TblNewDemoRelation selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(TblNewDemoRelation record);
-
-    int updateByPrimaryKey(TblNewDemoRelation record);
 }
