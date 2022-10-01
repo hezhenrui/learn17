@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.2</version>
+        <version>2.6.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -39,6 +39,8 @@
         <db-core.version>1.0.0</db-core.version>
         <common.version>1.0.0</common.version>
         <tk.mybatis.version>4.2.1</tk.mybatis.version>
+        <swagger-core.version>1.0.0</swagger-core.version>
+        <springfox.version>3.0.0</springfox.version>
     </properties>
 
     <dependencyManagement>
@@ -127,6 +129,18 @@
                 <groupId>com.hezhenrui</groupId>
                 <artifactId>db-core</artifactId>
                 <version>${db-core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>${springfox.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.hezhenrui</groupId>
+                <artifactId>swagger-core</artifactId>
+                <version>${swagger-core.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

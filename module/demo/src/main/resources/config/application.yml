@@ -6,6 +6,9 @@ spring:
     active: dev
   application:
     name: demo
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 
 mybatis:
   type-aliases-package: com.hezhenrui.domain.*

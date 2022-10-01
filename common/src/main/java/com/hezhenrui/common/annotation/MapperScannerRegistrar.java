@@ -14,7 +14,6 @@ import org.springframework.core.type.AnnotationMetadata;
 import org.springframework.util.ClassUtils;
 import org.springframework.util.StringUtils;
 import org.yaml.snakeyaml.Yaml;
-import com.hezhenrui.common.annotation.MapperScan;
 import tk.mybatis.spring.mapper.ClassPathMapperScanner;
 import tk.mybatis.spring.mapper.MapperFactoryBean;
 
