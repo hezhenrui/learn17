@@ -1,6 +1,7 @@
 package com.hezhenrui.db.multi;
 
 import com.hezhenrui.common.annotation.MapperScan;
+import com.hezhenrui.db.page.PageHelperCom;
 import com.zaxxer.hikari.HikariDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -12,8 +13,14 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 @Configuration
-@MapperScan(basePackages ="hezhenrui.mapper.base-packages.test1", sqlSessionTemplateRef  = "ds2SqlSessionTemplate")
+@MapperScan(basePackages = "hezhenrui.mapper.base-packages.test1", sqlSessionTemplateRef = "ds2SqlSessionTemplate")
 public class Ds2Config {
+
+    private final PageHelperCom pageHelperCom;
+
+    public Ds2Config(PageHelperCom pageHelperCom) {
+        this.pageHelperCom = pageHelperCom;
+    }
 
     //ds2数据源
     @Bean("ds2SqlSessionFactory")
@@ -22,6 +29,7 @@ public class Ds2Config {
         sqlSessionFactory.setDataSource(dataSource);
         sqlSessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().
                 getResources("classpath*:mapper/*.xml"));
+        pageHelperCom.pageHelper(sqlSessionFactory);
         return sqlSessionFactory.getObject();
     }
 

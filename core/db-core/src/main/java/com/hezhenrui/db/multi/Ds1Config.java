@@ -1,10 +1,11 @@
 package com.hezhenrui.db.multi;
 
+import com.hezhenrui.common.annotation.MapperScan;
+import com.hezhenrui.db.page.PageHelperCom;
 import com.zaxxer.hikari.HikariDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,6 +17,12 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 @MapperScan(basePackages = "hezhenrui.mapper.base-packages.test", sqlSessionTemplateRef = "ds1SqlSessionTemplate")
 public class Ds1Config {
 
+    private final PageHelperCom pageHelperCom;
+
+    public Ds1Config(PageHelperCom pageHelperCom) {
+        this.pageHelperCom = pageHelperCom;
+    }
+
     //主数据源 ds1数据源
     @Primary
     @Bean("ds1SqlSessionFactory")
@@ -24,6 +31,7 @@ public class Ds1Config {
         sqlSessionFactory.setDataSource(dataSource);
         sqlSessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().
                 getResources("classpath*:mapper/*.xml"));
+        pageHelperCom.pageHelper(sqlSessionFactory);
         return sqlSessionFactory.getObject();
     }
 

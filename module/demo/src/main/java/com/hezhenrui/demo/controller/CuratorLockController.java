@@ -1,5 +1,6 @@
 package com.hezhenrui.demo.controller;
 
+import com.github.pagehelper.PageHelper;
 import com.hezhenrui.demo.domain.test1.TblDemo;
 import com.hezhenrui.demo.mapper.test1.TblDemoMapper;
 import com.hezhenrui.thread.enums.ThreadPoolEnum;
@@ -9,6 +10,7 @@ import org.apache.curator.framework.recipes.locks.InterProcessMutex;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
@@ -34,10 +36,11 @@ public class CuratorLockController {
 
     @GetMapping("/lock")
     public void lock() throws Exception {
-        CompletableFuture.runAsync(()-> log.info("1"), ThreadPoolEnum.IO.getInstance());
-        TblDemo tblDemo = new TblDemo();
-        tblDemo.setId(1);
-        TblDemo rs = tblDemoMapper.selectOne(tblDemo);
+        CompletableFuture.runAsync(() -> log.info("1"), ThreadPoolEnum.IO.getInstance());
+
+        PageHelper.startPage(1, 3);
+        List<TblDemo> rs = tblDemoMapper.selectAll();
+
         // Zk分布式锁
         InterProcessMutex lock = new InterProcessMutex(client, "/lock/lockCount");
 

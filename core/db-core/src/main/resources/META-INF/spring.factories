@@ -1,4 +1,6 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 com.hezhenrui.db.multi.MultiDataSourceConfig,\
 com.hezhenrui.db.multi.Ds1Config,\
-com.hezhenrui.db.multi.Ds2Config
+com.hezhenrui.db.multi.Ds2Config,\
+com.hezhenrui.db.page.PageHelperCom,\
+com.hezhenrui.db.page.CustomizedMapperAutoConfiguration

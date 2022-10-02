@@ -41,6 +41,7 @@
         <tk.mybatis.version>4.2.1</tk.mybatis.version>
         <swagger-core.version>1.0.0</swagger-core.version>
         <springfox.version>3.0.0</springfox.version>
+        <pagehelper.version>1.4.5</pagehelper.version>
     </properties>
 
     <dependencyManagement>
@@ -141,6 +142,12 @@
                 <groupId>com.hezhenrui</groupId>
                 <artifactId>swagger-core</artifactId>
                 <version>${swagger-core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

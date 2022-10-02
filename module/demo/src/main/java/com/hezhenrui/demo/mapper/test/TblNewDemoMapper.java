@@ -2,11 +2,11 @@ package com.hezhenrui.demo.mapper.test;
 
 import com.hezhenrui.demo.domain.test.TblNewDemo;
 import java.util.List;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import tk.mybatis.mapper.common.Mapper;
 
-@org.apache.ibatis.annotations.Mapper
-public interface TblNewDemoMapper extends Mapper<TblNewDemo> {
+@Mapper
+public interface TblNewDemoMapper extends tk.mybatis.mapper.common.Mapper<TblNewDemo> {
     int updateBatch(List<TblNewDemo> list);
 
     int updateBatchSelective(List<TblNewDemo> list);
