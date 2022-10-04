@@ -1,13 +1,12 @@
-package com.hezhenrui.demo.distributed.kafka;
+package com.hezhenrui.demo.producer;
 
 import cn.hutool.core.convert.Convert;
 import com.alibaba.fastjson.JSON;
-import com.hezhenrui.demo.demo.GCDemo;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.hezhenrui.common.entity.GCDemo;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.util.concurrent.ListenableFuture;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,14 +15,17 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2022-01-11
  */
 @RestController
-@RequestMapping("kafkaController")
-public class KafkaController {
+@RequestMapping("kafka")
+public class KafkaProducer {
 
-    @Autowired
-    KafkaTemplate<String,String> kafkaTemplate;
+    private final KafkaTemplate<String,String> kafkaTemplate;
 
-    @GetMapping("sendMessage")
-    public void sendMessage(){
+    public KafkaProducer(KafkaTemplate<String, String> kafkaTemplate) {
+        this.kafkaTemplate = kafkaTemplate;
+    }
+
+    @PostMapping("send")
+    public void send(){
         for (int i=0;i<100;i++){
             GCDemo gcDemo = new GCDemo();
             gcDemo.setId(Convert.toStr(i));

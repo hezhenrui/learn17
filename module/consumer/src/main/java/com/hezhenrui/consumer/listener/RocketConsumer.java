@@ -1,16 +1,16 @@
-package com.hezhenrui.demo.distributed.rocketMq;
+package com.hezhenrui.consumer.listener;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
 import org.apache.rocketmq.spring.core.RocketMQListener;
 import org.springframework.stereotype.Component;
 
+@Slf4j
 @Component
 @RocketMQMessageListener(topic = "pay_topic",
-        consumerGroup = "transaction-consumer-group",
+        consumerGroup = "${rocketmq.producer.group}",
         selectorExpression = "*")
-@Slf4j
-public class SpringTxConsumer implements RocketMQListener<String> {
+public class RocketConsumer implements RocketMQListener<String> {
 
     @Override
     public void onMessage(String msg) {

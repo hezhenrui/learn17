@@ -1,8 +1,8 @@
 package com.hezhenrui.common.annotation;
 
+import com.hezhenrui.common.utils.ProceedingJoinPointParam;
 import com.hezhenrui.common.utils.ProceedingJoinPointUtil;
 import com.rabbitmq.client.Channel;
-import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -10,8 +10,6 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.amqp.core.Message;
 import org.springframework.stereotype.Component;
-
-import java.util.Map;
 
 @Slf4j
 @Component
@@ -25,11 +23,9 @@ public class RabbitManualListener {
     @Around(value = "pointCut()")
     public Object execute(ProceedingJoinPoint joinPoint) throws Throwable {
         //获取Channel和Message参数
-        Map<String, Object> paramMap = ProceedingJoinPointUtil.getParam(joinPoint);
-        @NonNull
-        Message message = (Message) paramMap.get("Message");
-        @NonNull
-        Channel channel = (Channel) paramMap.get("Channel");
+        ProceedingJoinPointParam pointParam = ProceedingJoinPointUtil.getParam(joinPoint);
+        Message message = pointParam.getMessage();
+        Channel channel = pointParam.getChannel();
         Object object = null;
         long deliveryTag = message.getMessageProperties().getDeliveryTag();
         try {

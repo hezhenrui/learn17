@@ -1,4 +1,4 @@
-package com.hezhenrui.demo.demo;
+package com.hezhenrui.common.entity;
 
 import java.io.Serializable;
 import java.util.StringJoiner;
@@ -37,11 +37,4 @@ public class GCDemo implements Serializable {
                 .toString();
     }
 
-    public static void main(String[] args) {
-        GCDemo gcDemo = new GCDemo();
-        gcDemo.setId("1");
-        gcDemo.setName("2");
-        System.gc();
-        System.out.println(gcDemo);
-    }
 }
