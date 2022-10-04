@@ -24,6 +24,11 @@ spring:
     username: guest
     password: guest
     port: 5672
+    listener:
+      simple:
+        acknowledge-mode: manual #采取手动应答
+        retry:
+          enabled: true # 是否支持重试
   kafka:
     producer:
       bootstrap-servers: 127.0.0.1:9092

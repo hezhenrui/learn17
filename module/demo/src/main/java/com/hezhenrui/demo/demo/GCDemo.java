@@ -1,12 +1,13 @@
 package com.hezhenrui.demo.demo;
 
+import java.io.Serializable;
 import java.util.StringJoiner;
 
 /**
  * @author hzr
  * @date 2022-01-12
  */
-public class GCDemo {
+public class GCDemo implements Serializable {
 
     private String id;
 
