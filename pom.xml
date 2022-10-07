@@ -19,9 +19,9 @@
     </modules>
 
     <groupId>com.hezhenrui</groupId>
-    <artifactId>spring-boot-main</artifactId>
+    <artifactId>learn17</artifactId>
     <version>1.0.0</version>
-    <name>spring-boot-main</name>
+    <name>learn17</name>
 
     <properties>
         <java.version>1.8</java.version>

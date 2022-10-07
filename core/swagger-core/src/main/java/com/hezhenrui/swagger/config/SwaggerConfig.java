@@ -41,8 +41,8 @@ public class SwaggerConfig {
         return new ApiInfoBuilder()
                 .title("Swagger Test App Restful API")
                 .description("swagger test app restful api")
-                .termsOfServiceUrl("https://github.com/hezhenrui/spring-boot-main")
-                .contact(new Contact("hezhenrui", "https://github.com/hezhenrui/spring-boot-main", "zhenrui.he.code@outlook.com"))
+                .termsOfServiceUrl("https://github.com/hezhenrui/learn17")
+                .contact(new Contact("hezhenrui", "https://github.com/hezhenrui/learn17", "zhenrui.he.code@outlook.com"))
                 .version("1.0")
                 .build();
     }
