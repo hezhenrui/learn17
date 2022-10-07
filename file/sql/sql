@@ -1,0 +1,59 @@
+create table test.tbl_new_demo
+(
+    id          int auto_increment
+        primary key,
+    name        varchar(64) null,
+    age         varchar(64) null,
+    relation_id int         null
+);
+
+create table test.tbl_new_demo_copy
+(
+    id   int auto_increment
+        primary key,
+    name varchar(64) null,
+    age  varchar(64) null
+);
+
+create table test.tbl_new_demo_relation
+(
+    id          int auto_increment
+        primary key,
+    name        varchar(64) null,
+    age         varchar(64) null,
+    relation_id int         null
+);
+
+create table test.tbl_rocket_transaction_ex
+(
+    id          int auto_increment
+        primary key,
+    commit_id   varchar(64) null,
+    log         text        null,
+    create_by   varchar(64) null,
+    create_time datetime    null,
+    update_by   varchar(64) null,
+    update_time datetime    null
+)
+    comment 'rocketmq事务日志表';
+
+create table test1.tbl_demo
+(
+    id          int        null,
+    name        mediumtext null,
+    age         mediumtext null,
+    relation_id int        null
+);
+
+create table test1.tbl_rocket_consumer
+(
+    id          int auto_increment
+        primary key,
+    data        varchar(64) null,
+    create_by   varchar(64) null,
+    create_time datetime    null,
+    update_by   varchar(64) null,
+    update_time datetime    null
+)
+    comment 'rocketmq消费者表';
+
