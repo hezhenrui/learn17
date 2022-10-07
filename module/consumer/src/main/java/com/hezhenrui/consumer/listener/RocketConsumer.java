@@ -8,13 +8,13 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @RocketMQMessageListener(topic = "pay_topic",
-        consumerGroup = "${rocketmq.producer.group}",
+        consumerGroup = "${rocketmq.consumer.group}",
         selectorExpression = "*")
 public class RocketConsumer implements RocketMQListener<String> {
 
     @Override
-    public void onMessage(String msg) {
-        log.info("接收到消息 -> {}", msg);
+    public void onMessage(String message) {
+        log.info("接收到消息 -> {}", message);
     }
 }
 

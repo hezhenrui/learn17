@@ -30,13 +30,6 @@ spring:
         retry:
           enabled: true # 是否支持重试
   kafka:
-    producer:
-      bootstrap-servers: 127.0.0.1:9092
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-      retries: 3
-      buffer-memory: 40960
-      batch-size: 4096
     consumer:
       group-id: kafka_group
       auto-offset-reset: latest
@@ -56,5 +49,5 @@ spring:
 
 rocketmq:
   name-server: 127.0.0.1:9876
-  producer:
-    group: transcation-group
+  consumer:
+    group: consumer-group

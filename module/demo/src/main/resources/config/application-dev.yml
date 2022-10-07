@@ -24,11 +24,6 @@ spring:
     username: guest
     password: guest
     port: 5672
-    listener:
-      simple:
-        acknowledge-mode: manual #采取手动应答
-        retry:
-          enabled: true # 是否支持重试
   kafka:
     producer:
       bootstrap-servers: 127.0.0.1:9092
@@ -37,22 +32,6 @@ spring:
       retries: 3
       buffer-memory: 40960
       batch-size: 4096
-    consumer:
-      group-id: kafka_group
-      auto-offset-reset: latest
-      enable-auto-commit: false
-      auto-commit-interval: 1000
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-    listener:
-      # MANUAL	poll()拉取一批消息，处理完业务后，手动调用Acknowledgment.acknowledge()先将offset存放到map本地缓存，在下一次poll之前从缓存拿出来批量提交
-      # MANUAL_IMMEDIATE	每处理完业务手动调用Acknowledgment.acknowledge()后立即提交
-      # RECORD	当每一条记录被消费者监听器（ListenerConsumer）处理之后提交
-      # BATCH	当每一批poll()的数据被消费者监听器（ListenerConsumer）处理之后提交
-      # TIME	当每一批poll()的数据被消费者监听器（ListenerConsumer）处理之后，距离上次提交时间大于TIME时提交
-      # COUNT	当每一批poll()的数据被消费者监听器（ListenerConsumer）处理之后，被处理record数量大于等于COUNT时提交
-      # COUNT_TIME	TIME或COUNT满足其中一个时提交
-      ack-mode: manual_immediate
   redis:
     cluster:
       nodes: "redis://127.0.0.1:6379,redis://127.0.0.1:6380,redis://127.0.0.1:6381,redis://127.0.0.1:6382,redis://127.0.0.1:6383,redis://127.0.0.1:6384"
@@ -67,4 +46,4 @@ spring:
 rocketmq:
   name-server: 127.0.0.1:9876
   producer:
-    group: transcation-group
+    group: producer-group

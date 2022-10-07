@@ -1,6 +1,11 @@
 package com.hezhenrui.demo.producer;
 
+import com.hezhenrui.demo.service.RocketTransactionService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.rocketmq.spring.core.RocketMQTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,17 +15,21 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequestMapping("/rocket")
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class RocketController {
 
     private final RocketMQTemplateOther rocketMQTemplateOther;
 
-    public RocketController(RocketMQTemplateOther rocketMQTemplateOther) {
-        this.rocketMQTemplateOther = rocketMQTemplateOther;
-    }
-
-
     @PostMapping("/send")
     public String send() {
+        Message<String> message = MessageBuilder.withPayload("用户A账户减500元,用户B账户加500元。").build();
+        rocketMQTemplateOther.send("pay_topic", message);
+        log.info("发送成功");
+        return "发送成功";
+    }
+
+    @PostMapping("/sendTransaction")
+    public String sendTransaction() {
         Message<String> message = MessageBuilder.withPayload("用户A账户减500元,用户B账户加500元。").build();
         rocketMQTemplateOther.send("pay_topic", message);
         log.info("发送成功");
