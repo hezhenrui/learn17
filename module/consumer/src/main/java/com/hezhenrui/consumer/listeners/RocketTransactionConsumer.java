@@ -1,4 +1,4 @@
-package com.hezhenrui.consumer.listener;
+package com.hezhenrui.consumer.listeners;
 
 import com.hezhenrui.consumer.domain.test.TblRocketTransactionEx;
 import com.hezhenrui.consumer.domain.test1.TblRocketConsumer;

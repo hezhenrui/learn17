@@ -1,4 +1,4 @@
-package com.hezhenrui.consumer.listener;
+package com.hezhenrui.consumer.listeners;
 
 import com.hezhenrui.common.annotation.RabbitManual;
 import com.hezhenrui.common.entity.GCDemo;

@@ -1,4 +1,4 @@
-package com.hezhenrui.consumer.listener;
+package com.hezhenrui.consumer.listeners;
 
 import com.alibaba.fastjson.JSON;
 import com.hezhenrui.common.entity.GCDemo;

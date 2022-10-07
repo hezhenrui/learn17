@@ -1,4 +1,4 @@
-package com.hezhenrui.consumer.listener;
+package com.hezhenrui.consumer.listeners;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
