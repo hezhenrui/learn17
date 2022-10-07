@@ -30,8 +30,8 @@
         <easyexcel.version>3.0.5</easyexcel.version>
         <curator.version>5.2.0</curator.version>
         <rocketmq.version>2.2.1</rocketmq.version>
-        <fastjson.version>1.2.79</fastjson.version>
-        <common.io.version>2.6</common.io.version>
+        <fastjson.version>2.0.15</fastjson.version>
+        <common.io.version>2.11.0</common.io.version>
         <redisson.version>3.16.4</redisson.version>
         <zk-core.version>1.0.0</zk-core.version>
         <redis-core.version>1.0.0</redis-core.version>
