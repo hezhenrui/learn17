@@ -1,3 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.hezhenrui.zk.config.CuratorConfig,\
-com.hezhenrui.zk.config.CuratorProperties

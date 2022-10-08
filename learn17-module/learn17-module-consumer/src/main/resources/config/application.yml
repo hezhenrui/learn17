@@ -1,0 +1,38 @@
+server:
+  port: 18011
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: learn17-module-consumer
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+mybatis:
+  type-aliases-package: com.hezhenrui.learn17.module.consumer.domain.*
+  mapper-locations: classpath*:mapper/*.xml
+  configuration:
+    auto-mapping-behavior: partial
+    map-underscore-to-camel-case: true
+
+logging:
+  config: classpath:logback/logback-spring.xml
+  exception-conversion-word: '%wEx'
+  level:
+    root: info
+    com.hezhenrui.learn17.module.consumer: debug
+  file:
+    name: ${spring.application.name}.log
+    path: ./logs/${spring.application.name}/
+
+hezhenrui:
+  thread-core:
+    keep-alive-time: 20000
+    thread-name-prefix: hezhenrui-consumer-exec-
+    capacity: 50
+  mapper:
+    base-packages:
+      test: com.hezhenrui.learn17.module.consumer.mapper.test
+      test1: com.hezhenrui.learn17.module.consumer.mapper.test1

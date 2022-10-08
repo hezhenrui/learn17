@@ -12,10 +12,10 @@
     </parent>
 
     <modules>
-        <module>common</module>
-        <module>api</module>
-        <module>core</module>
-        <module>module</module>
+        <module>learn17-common</module>
+        <module>learn17-api</module>
+        <module>learn17-core</module>
+        <module>learn17-module</module>
     </modules>
 
     <groupId>com.hezhenrui</groupId>
@@ -104,31 +104,31 @@
 
             <dependency>
                 <groupId>com.hezhenrui</groupId>
-                <artifactId>common</artifactId>
+                <artifactId>learn17-common</artifactId>
                 <version>${common.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.hezhenrui</groupId>
-                <artifactId>zk-core</artifactId>
+                <artifactId>learn17-core-zk</artifactId>
                 <version>${zk-core.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.hezhenrui</groupId>
-                <artifactId>redis-core</artifactId>
+                <artifactId>learn17-core-redis</artifactId>
                 <version>${redis-core.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.hezhenrui</groupId>
-                <artifactId>thread-core</artifactId>
+                <artifactId>learn17-core-thread</artifactId>
                 <version>${thread-core.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.hezhenrui</groupId>
-                <artifactId>db-core</artifactId>
+                <artifactId>learn17-core-db</artifactId>
                 <version>${db-core.version}</version>
             </dependency>
 
@@ -140,7 +140,7 @@
 
             <dependency>
                 <groupId>com.hezhenrui</groupId>
-                <artifactId>swagger-core</artifactId>
+                <artifactId>learn17-core-swagger</artifactId>
                 <version>${swagger-core.version}</version>
             </dependency>
 

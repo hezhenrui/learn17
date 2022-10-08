@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.hezhenrui.learn17.core.thread.enums.ThreadPoolProperties
