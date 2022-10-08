@@ -2,7 +2,6 @@ package com.hezhenrui.learn17.common.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
@@ -10,7 +9,6 @@ import lombok.experimental.SuperBuilder;
 import javax.persistence.Column;
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 /**
  * 基类
@@ -37,5 +35,5 @@ public class BaseEntity implements Serializable {
 
     @Column(name = "update_time")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date updateTime;
+    private LocalDateTime updateTime;
 }

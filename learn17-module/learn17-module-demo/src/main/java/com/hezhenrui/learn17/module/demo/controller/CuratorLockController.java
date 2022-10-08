@@ -1,12 +1,14 @@
 package com.hezhenrui.learn17.module.demo.controller;
 
 import com.github.pagehelper.PageHelper;
-import com.hezhenrui.learn17.module.demo.domain.test1.TblDemo;
-import com.hezhenrui.learn17.module.demo.mapper.test1.TblDemoMapper;
+import com.hezhenrui.learn17.common.po.test1.TblDemo;
+import com.hezhenrui.learn17.core.db.mapper.test1.TblDemoMapper;
 import com.hezhenrui.learn17.core.thread.enums.ThreadPoolEnum;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.recipes.locks.InterProcessMutex;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,16 +18,12 @@ import java.util.concurrent.TimeUnit;
 
 @RestController
 @Slf4j
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class CuratorLockController {
     
     private final TblDemoMapper tblDemoMapper;
 
     private final CuratorFramework client;
-
-    public CuratorLockController(TblDemoMapper tblDemoMapper, CuratorFramework client) {
-        this.tblDemoMapper = tblDemoMapper;
-        this.client = client;
-    }
 
     /**
      * 锁测试共享变量

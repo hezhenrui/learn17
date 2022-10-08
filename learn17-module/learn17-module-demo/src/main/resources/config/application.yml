@@ -10,22 +10,30 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
 
-mybatis:
-  type-aliases-package: com.hezhenrui.learn17.module.demo.domain.*
-  mapper-locations: classpath*:mapper/*.xml
-  configuration:
-    auto-mapping-behavior: partial
-    map-underscore-to-camel-case: true
-
 logging:
   config: classpath:logback/logback-spring.xml
   exception-conversion-word: '%wEx'
   level:
     root: info
     com.hezhenrui.learn17.module.demo: debug
+    com.hezhenrui.learn17.core.db: debug
   file:
     name: ${spring.application.name}.log
     path: ./logs/${spring.application.name}/
+
+pagehelper:
+  reasonable: false
+  supportMethodsArguments: true
+  params: count=countSql
+  auto-dialect: true
+  auto-runtime-dialect: true
+
+mybatis:
+  type-aliases-package: com.hezhenrui.learn17.module.demo.domain.*
+  mapper-locations: classpath*:mapper/*.xml
+  configuration:
+    auto-mapping-behavior: partial
+    map-underscore-to-camel-case: true
 
 hezhenrui:
   thread-core:
@@ -34,5 +42,5 @@ hezhenrui:
     capacity: 50
   mapper:
     base-packages:
-      test: com.hezhenrui.learn17.module.demo.mapper.test
-      test1: com.hezhenrui.learn17.module.demo.mapper.test1
+      test: com.hezhenrui.learn17.core.db.mapper.test
+      test1: com.hezhenrui.learn17.core.db.mapper.test1

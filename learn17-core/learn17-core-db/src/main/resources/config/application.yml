@@ -1,6 +1,0 @@
-pagehelper:
-  reasonable: false
-  supportMethodsArguments: true
-  params: count=countSql
-  auto-dialect: true
-  auto-runtime-dialect: true

@@ -1,7 +1,7 @@
 package com.hezhenrui.learn17.module.demo.controller;
 
 import com.hezhenrui.learn17.common.entity.ResultVo;
-import com.hezhenrui.learn17.module.demo.domain.test.TblRocketTransactionEx;
+import com.hezhenrui.learn17.common.po.test.TblRocketTransactionEx;
 import com.hezhenrui.learn17.module.demo.service.RocketTransactionService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;

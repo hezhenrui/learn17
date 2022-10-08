@@ -1,8 +1,8 @@
 package com.hezhenrui.learn17.module.consumer.listeners;
 
-import com.hezhenrui.learn17.module.consumer.domain.test.TblRocketTransactionEx;
-import com.hezhenrui.learn17.module.consumer.domain.test1.TblRocketConsumer;
-import com.hezhenrui.learn17.module.consumer.mapper.test1.TblRocketConsumerMapper;
+import com.hezhenrui.learn17.common.po.test.TblRocketTransactionEx;
+import com.hezhenrui.learn17.common.po.test1.TblRocketConsumer;
+import com.hezhenrui.learn17.core.db.mapper.test1.TblRocketConsumerMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;

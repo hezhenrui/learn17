@@ -110,7 +110,7 @@ public class MapperScannerRegistrar implements ImportBeanDefinitionRegistrar, Re
     public void setProperties(List<String> basePackages, String basePackagesKey) {
 
         //获取配置文件数据
-        try (InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream("config/application.yml")) {
+        try (InputStream in = resourceLoader.getResource("config/application.yml").getInputStream()) {
             Yaml yaml = new Yaml();
             Map properties = yaml.loadAs(in, Map.class);
             List<String> keys = Arrays.asList(basePackagesKey.split("\\."));

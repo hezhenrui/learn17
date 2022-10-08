@@ -1,7 +1,7 @@
 package com.hezhenrui.learn17.module.demo.listeners;
 
-import com.hezhenrui.learn17.module.demo.domain.test.TblRocketTransactionEx;
-import com.hezhenrui.learn17.module.demo.mapper.test.TblRocketTransactionExMapper;
+import com.hezhenrui.learn17.common.po.test.TblRocketTransactionEx;
+import com.hezhenrui.learn17.core.db.mapper.test.TblRocketTransactionExMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.spring.annotation.RocketMQTransactionListener;

@@ -3,7 +3,7 @@ package com.hezhenrui.learn17.module.demo.service.impl;
 import cn.hutool.core.util.IdUtil;
 import com.hezhenrui.learn17.common.entity.ResultVo;
 import com.hezhenrui.learn17.common.utils.ResultUtil;
-import com.hezhenrui.learn17.module.demo.domain.test.TblRocketTransactionEx;
+import com.hezhenrui.learn17.common.po.test.TblRocketTransactionEx;
 import com.hezhenrui.learn17.module.demo.producer.RocketMQTemplateTransaction;
 import com.hezhenrui.learn17.module.demo.service.RocketTransactionService;
 import lombok.RequiredArgsConstructor;
