@@ -1,6 +1,6 @@
 package com.hezhenrui.learn17.core.thread.enums;
 
-import cn.hutool.extra.spring.SpringUtil;
+import com.hezhenrui.learn17.common.utils.SpringUtil;
 import org.springframework.scheduling.concurrent.CustomizableThreadFactory;
 
 import java.util.concurrent.*;

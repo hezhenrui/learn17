@@ -25,12 +25,9 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <hutool.version>5.7.17</hutool.version>
-        <mybatis.version>2.2.0</mybatis.version>
         <easyexcel.version>3.0.5</easyexcel.version>
         <curator.version>5.2.0</curator.version>
         <rocketmq.version>2.2.1</rocketmq.version>
-        <fastjson.version>2.0.15</fastjson.version>
         <common.io.version>2.11.0</common.io.version>
         <redisson.version>3.16.4</redisson.version>
         <zk-core.version>1.0.0</zk-core.version>
@@ -42,6 +39,9 @@
         <swagger-core.version>1.0.0</swagger-core.version>
         <springfox.version>3.0.0</springfox.version>
         <pagehelper.version>1.4.5</pagehelper.version>
+        <guava.version>31.1-jre</guava.version>
+        <common-lang3.version>3.12.0</common-lang3.version>
+        <gson.version>2.9.1</gson.version>
     </properties>
 
     <dependencyManagement>
@@ -72,18 +72,6 @@
             </dependency>
 
             <dependency>
-                <groupId>cn.hutool</groupId>
-                <artifactId>hutool-all</artifactId>
-                <version>${hutool.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>${mybatis.version}</version>
-            </dependency>
-
-            <dependency>
                 <groupId>tk.mybatis</groupId>
                 <artifactId>mapper-spring-boot-starter</artifactId>
                 <version>${tk.mybatis.version}</version>
@@ -93,13 +81,6 @@
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>${common.io.version}</version>
-            </dependency>
-
-            <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>fastjson</artifactId>
-                <version>${fastjson.version}</version>
             </dependency>
 
             <dependency>
@@ -122,6 +103,12 @@
 
             <dependency>
                 <groupId>com.hezhenrui</groupId>
+                <artifactId>learn17-core-swagger</artifactId>
+                <version>${swagger-core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.hezhenrui</groupId>
                 <artifactId>learn17-core-thread</artifactId>
                 <version>${thread-core.version}</version>
             </dependency>
@@ -139,16 +126,29 @@
             </dependency>
 
             <dependency>
-                <groupId>com.hezhenrui</groupId>
-                <artifactId>learn17-core-swagger</artifactId>
-                <version>${swagger-core.version}</version>
-            </dependency>
-
-            <dependency>
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
                 <version>${pagehelper.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${gson.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

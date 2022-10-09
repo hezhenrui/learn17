@@ -1,6 +1,5 @@
 package com.hezhenrui.learn17.module.demo.service.impl;
 
-import cn.hutool.core.util.IdUtil;
 import com.hezhenrui.learn17.common.entity.ResultVo;
 import com.hezhenrui.learn17.common.utils.ResultUtil;
 import com.hezhenrui.learn17.common.po.test.TblRocketTransactionEx;
@@ -13,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
@@ -22,7 +23,7 @@ public class RocketTransactionServiceImpl implements RocketTransactionService {
 
     @Override
     public ResultVo<TblRocketTransactionEx> sendTransaction(TblRocketTransactionEx tblRocketTransactionEx) {
-        String transactionId = IdUtil.simpleUUID();
+        String transactionId = UUID.randomUUID().toString();
         rocketMQTemplateTransaction.sendMessageInTransaction("rocket_transaction:one", MessageBuilder.withPayload(tblRocketTransactionEx)
                 .setHeader(RocketMQHeaders.TRANSACTION_ID, transactionId)
                 .build(), tblRocketTransactionEx);

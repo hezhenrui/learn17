@@ -1,8 +1,8 @@
 package com.hezhenrui.learn17.module.demo.producer;
 
-import cn.hutool.core.convert.Convert;
-import com.alibaba.fastjson.JSON;
+import com.google.gson.Gson;
 import com.hezhenrui.learn17.common.entity.GCDemo;
+import com.hezhenrui.learn17.common.utils.StringUtil;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.util.concurrent.ListenableFuture;
@@ -28,8 +28,8 @@ public class KafkaProducer {
     public void send(){
         for (int i=0;i<100;i++){
             GCDemo gcDemo = new GCDemo();
-            gcDemo.setId(Convert.toStr(i));
-            ListenableFuture<SendResult<String, String>> sendResultListenableFuture=kafkaTemplate.send("topic",Convert.toStr(i), JSON.toJSONString(gcDemo));
+            gcDemo.setId(StringUtil.toString(i));
+            ListenableFuture<SendResult<String, String>> sendResultListenableFuture=kafkaTemplate.send("topic",StringUtil.toString(i), new Gson().toJson(gcDemo));
             sendResultListenableFuture.addCallback(result -> {
 
             }, ex -> {
