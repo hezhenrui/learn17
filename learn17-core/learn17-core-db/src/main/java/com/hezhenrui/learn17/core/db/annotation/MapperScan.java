@@ -1,4 +1,4 @@
-package com.hezhenrui.learn17.common.annotation;
+package com.hezhenrui.learn17.core.db.annotation;
 
 import org.springframework.beans.factory.support.BeanNameGenerator;
 import org.springframework.context.annotation.Import;

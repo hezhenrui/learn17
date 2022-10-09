@@ -1,4 +1,4 @@
-package com.hezhenrui.learn17.common.annotation;
+package com.hezhenrui.learn17.core.db.annotation;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -68,12 +68,12 @@ public class MapperScannerRegistrar implements ImportBeanDefinitionRegistrar, Re
                 basePackages.add(pkg);
             }
         }
-//        for (String pkg : annoAttrs.getStringArray("basePackages")) {
-//            if (StringUtils.hasText(pkg)) {
-//                basePackages.add(pkg);
-//            }
-//        }
-        setProperties(basePackages, annoAttrs.getStringArray("basePackages")[0]);
+        for (String pkg : annoAttrs.getStringArray("basePackages")) {
+            if (StringUtils.hasText(pkg)) {
+                basePackages.add(pkg);
+            }
+        }
+//        setProperties(basePackages, annoAttrs.getStringArray("basePackages")[0]);
         for (Class<?> clazz : annoAttrs.getClassArray("basePackageClasses")) {
             basePackages.add(ClassUtils.getPackageName(clazz));
         }

@@ -1,6 +1,6 @@
 package com.hezhenrui.learn17.core.db.multi;
 
-import com.hezhenrui.learn17.common.annotation.MapperScan;
+import com.hezhenrui.learn17.core.db.annotation.MapperScan;
 import com.hezhenrui.learn17.core.db.page.PageHelperCom;
 import com.zaxxer.hikari.HikariDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -14,7 +14,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 @Configuration
-@MapperScan(basePackages = "hezhenrui.mapper.base-packages.test", sqlSessionTemplateRef = "ds1SqlSessionTemplate")
+@MapperScan(basePackages = "com.hezhenrui.learn17.core.db.mapper.test", sqlSessionTemplateRef = "ds1SqlSessionTemplate")
 public class Ds1Config {
 
     private final PageHelperCom pageHelperCom;
