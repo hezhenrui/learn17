@@ -19,7 +19,7 @@
         <module>learn17-gateway</module>
     </modules>
 
-    <groupId>com.github</groupId>
+    <groupId>com.github.learn17</groupId>
     <artifactId>learn17</artifactId>
     <version>1.0.0</version>
     <name>learn17</name>
@@ -138,51 +138,45 @@
             </dependency>
 
             <dependency>
-                <groupId>com.github</groupId>
+                <groupId>com.github.learn17</groupId>
                 <artifactId>learn17-api</artifactId>
                 <version>${learn17.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.github</groupId>
+                <groupId>com.github.learn17</groupId>
                 <artifactId>learn17-common</artifactId>
                 <version>${learn17.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.github</groupId>
+                <groupId>com.github.learn17</groupId>
                 <artifactId>learn17-core-zk</artifactId>
                 <version>${learn17.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.github</groupId>
+                <groupId>com.github.learn17</groupId>
                 <artifactId>learn17-core-redis</artifactId>
                 <version>${learn17.version}</version>
             </dependency>
 
 <!--            <dependency>-->
-<!--                <groupId>com.github</groupId>-->
+<!--                <groupId>com.github.learn17</groupId>-->
 <!--                <artifactId>learn17-core-swagger</artifactId>-->
 <!--                <version>${learn17.version}</version>-->
 <!--            </dependency>-->
 
             <dependency>
-                <groupId>com.github</groupId>
+                <groupId>com.github.learn17</groupId>
                 <artifactId>learn17-core-thread</artifactId>
                 <version>${learn17.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.github</groupId>
+                <groupId>com.github.learn17</groupId>
                 <artifactId>learn17-core-db</artifactId>
                 <version>${learn17.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-boot-starter</artifactId>
-                <version>${springfox.version}</version>
             </dependency>
 
             <dependency>
