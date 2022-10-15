@@ -1,2 +1,3 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.hezhenrui.learn17.core.swagger.config.SwaggerConfig
+com.hezhenrui.learn17.core.swagger.config.SwaggerConfig,\
+com.hezhenrui.learn17.core.swagger.config.WebMvcConfig

@@ -14,7 +14,7 @@
         <module>learn17-core-redis</module>
         <module>learn17-core-thread</module>
         <module>learn17-core-db</module>
-        <module>learn17-core-swagger</module>
+<!--        <module>learn17-core-swagger</module>-->
     </modules>
 
     <artifactId>learn17-core</artifactId>

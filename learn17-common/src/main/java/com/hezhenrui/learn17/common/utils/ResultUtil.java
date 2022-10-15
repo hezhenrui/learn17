@@ -18,6 +18,10 @@ public class ResultUtil<T> {
         return ResultVo.builder().status(ResultEnum.ERROR.getStatus()).msg(ResultEnum.ERROR.getMsg()).data(data).build();
     }
     @SuppressWarnings("rawtypes")
+    public static <T> ResultVo UNAUTHORIZED(T data) {
+        return ResultVo.builder().status(ResultEnum.UNAUTHORIZED.getStatus()).msg(ResultEnum.UNAUTHORIZED.getMsg()).data(data).build();
+    }
+    @SuppressWarnings("rawtypes")
     public static <T> ResultVo build(ResultEnum resultEnum, T data) {
         return ResultVo.builder().status(resultEnum.getStatus()).msg(resultEnum.getMsg()).data(data).build();
     }

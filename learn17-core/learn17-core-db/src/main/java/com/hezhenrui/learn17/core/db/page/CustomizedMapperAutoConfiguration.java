@@ -3,7 +3,6 @@ package com.hezhenrui.learn17.core.db.page;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import tk.mybatis.mapper.autoconfigure.MapperProperties;
@@ -17,7 +16,6 @@ import java.util.List;
  * exclude = {DataSourceAutoConfiguration.class} 重新用 CustomizedMapperAutoConfiguration
  */
 @Configuration
-@ConditionalOnBean(SqlSessionFactory.class)
 @EnableConfigurationProperties(MapperProperties.class)
 @AutoConfigureAfter(MybatisAutoConfiguration.class)
 public class CustomizedMapperAutoConfiguration {

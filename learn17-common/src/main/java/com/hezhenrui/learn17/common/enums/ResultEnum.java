@@ -3,6 +3,7 @@ package com.hezhenrui.learn17.common.enums;
 public enum ResultEnum {
 
     SUCCESS(200,"操作成功"),
+    UNAUTHORIZED(401, "暂未登录或token已经过期"),
     ERROR(500,"操作失败");
 
     //响应业务状态

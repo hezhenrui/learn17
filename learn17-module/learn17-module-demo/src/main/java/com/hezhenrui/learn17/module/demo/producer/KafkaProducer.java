@@ -3,6 +3,8 @@ package com.hezhenrui.learn17.module.demo.producer;
 import com.google.gson.Gson;
 import com.hezhenrui.learn17.common.entity.GCDemo;
 import com.hezhenrui.learn17.common.utils.StringUtil;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.util.concurrent.ListenableFuture;
@@ -15,16 +17,13 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2022-01-11
  */
 @RestController
-@RequestMapping("kafka")
+@RequestMapping("/kafka")
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class KafkaProducer {
 
     private final KafkaTemplate<String,String> kafkaTemplate;
 
-    public KafkaProducer(KafkaTemplate<String, String> kafkaTemplate) {
-        this.kafkaTemplate = kafkaTemplate;
-    }
-
-    @PostMapping("send")
+    @PostMapping("/send")
     public void send(){
         for (int i=0;i<100;i++){
             GCDemo gcDemo = new GCDemo();

@@ -1,11 +1,42 @@
 server:
   port: 18010
+  servlet:
+    context-path: /demo/
 
 spring:
-  profiles:
-    active: dev
-  application:
-    name: learn17-module-demo
+  cloud:
+    # 负载均衡配置
+    loadbalancer:
+      ribbon:
+        #禁用ribbon
+        enabled: false
+      cache:
+        #启用本地缓存, 根据实际情况权衡
+        enabled: true
+        #缓存空间大小
+        capacity: 1000
+        #缓存的存活时间, 单位s
+        ttl: 2
+        #caffeine缓存的配置, 需引入caffeine依赖
+        caffeine:
+          #initialCapacity初始的缓存空间大小,expireAfterWrite最后一次写入后经过固定时间过期
+          spec: initialCapacity=500,expireAfterWrite=5s
+      health-check:
+        #重新运行运行状况检查计划程序的时间间隔。
+        interval: 25s
+        #运行状况检查计划程序的初始延迟值
+        initial-delay: 30
+      retry: #需要引入Spring Retry依赖
+        #该参数用来开启重试机制，默认是关闭
+        enabled: true
+        #切换实例的重试次数
+        max-retries-on-next-service-instance: 2
+        #对当前实例重试的次数
+        max-retries-on-same-service-instance: 0
+        #对所有的操作请求都进行重试
+        retry-on-all-operations: true
+        #Http响应码进行重试
+        retryable-status-codes: 500,404,502
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher

@@ -1,16 +1,16 @@
-package com.hezhenrui.learn17.module.consumer;
+package com.hezhenrui.learn17.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 
-@EnableFeignClients("com.hezhenrui.learn17.api")
 @EnableDiscoveryClient
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-public class ConsumerApplication {
+@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
+public class GatewayApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(ConsumerApplication.class, args);
+        SpringApplication.run(GatewayApplication.class, args);
     }
+
 }

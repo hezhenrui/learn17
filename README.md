@@ -1,6 +1,8 @@
 # learn17
 
 ```
+1. 集成nacos注册中心和配置中心
+2. 集成gateway和knife4j
 1. 集成多数据源 redisson swagger zk分布式锁
 2. rabbitMq kafka 以及rocketmq分布式事务配置
 ```
@@ -9,7 +11,14 @@
 
 ## 中间件启动
 
+### naocs启动 
+
+````
+start startup.cmd
+````
+
 ### rocketMq启动 
+
 ````
 start mqnamesrv.cmd
 start mqbroker.cmd -n 127.0.0.1:9876 autoCreateTopicEnable=true

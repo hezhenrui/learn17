@@ -1,0 +1,13 @@
+server:
+  port: 18012
+  servlet:
+    context-path: /gateway/
+
+logging:
+  config: classpath:logback/logback-spring.xml
+  exception-conversion-word: '%wEx'
+  level:
+    root: info
+  file:
+    name: ${spring.application.name}.log
+    path: ./logs/${spring.application.name}/
