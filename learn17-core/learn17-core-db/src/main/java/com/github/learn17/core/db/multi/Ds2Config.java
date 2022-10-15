@@ -28,7 +28,7 @@ public class Ds2Config {
         SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
         sqlSessionFactory.setDataSource(dataSource);
         sqlSessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().
-                getResources("classpath*:mapper/*.xml"));
+                getResources("classpath*:mapper/test1/*.xml"));
         pageHelperCom.pageHelper(sqlSessionFactory);
         return sqlSessionFactory.getObject();
     }

@@ -31,7 +31,7 @@ public class SwaggerConfiguration extends BaseSwaggerConfig {
     @Override
     public SwaggerProperties swaggerProperties() {
         return SwaggerProperties.builder()
-                .apiBasePackage("com.github.learn17.module.demo.controller")
+                .apiBasePackage("com.github.learn17.module.demo")
                 .title("demo")
                 .contactEmail("zhenrui.he.code@outlook.com")
                 .contactUrl("https://github.com/hezhenrui/learn17")

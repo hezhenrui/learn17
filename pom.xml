@@ -40,7 +40,7 @@
         <tk.mybatis.version>4.2.1</tk.mybatis.version>
         <swagger-core.version>1.0.0</swagger-core.version>
         <springfox.version>3.0.0</springfox.version>
-        <pagehelper.version>1.4.5</pagehelper.version>
+        <pagehelper.version>5.3.2</pagehelper.version>
         <guava.version>31.1-jre</guava.version>
         <common-lang3.version>3.12.0</common-lang3.version>
         <gson.version>2.9.1</gson.version>
@@ -191,10 +191,9 @@
                 <version>${bootstrap.version}</version>
             </dependency>
 
-
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
-                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <artifactId>pagehelper</artifactId>
                 <version>${pagehelper.version}</version>
             </dependency>
 

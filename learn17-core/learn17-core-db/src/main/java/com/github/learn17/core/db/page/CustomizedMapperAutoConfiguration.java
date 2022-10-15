@@ -1,8 +1,6 @@
 package com.github.learn17.core.db.page;
 
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration;
-import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import tk.mybatis.mapper.autoconfigure.MapperProperties;
@@ -17,7 +15,6 @@ import java.util.List;
  */
 @Configuration
 @EnableConfigurationProperties(MapperProperties.class)
-@AutoConfigureAfter(MybatisAutoConfiguration.class)
 public class CustomizedMapperAutoConfiguration {
 
     private final List<SqlSessionFactory> sqlSessionFactoryList;

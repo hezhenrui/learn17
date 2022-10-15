@@ -30,7 +30,7 @@ public class Ds1Config {
         SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
         sqlSessionFactory.setDataSource(dataSource);
         sqlSessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().
-                getResources("classpath*:mapper/*.xml"));
+                getResources("classpath*:mapper/test/*.xml"));
         pageHelperCom.pageHelper(sqlSessionFactory);
         return sqlSessionFactory.getObject();
     }
