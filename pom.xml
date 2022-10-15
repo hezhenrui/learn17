@@ -19,7 +19,7 @@
         <module>learn17-gateway</module>
     </modules>
 
-    <groupId>com.hezhenrui</groupId>
+    <groupId>com.github</groupId>
     <artifactId>learn17</artifactId>
     <version>1.0.0</version>
     <name>learn17</name>
@@ -35,7 +35,7 @@
         <redis-core.version>1.0.0</redis-core.version>
         <thread-core.version>1.0.0</thread-core.version>
         <db-core.version>1.0.0</db-core.version>
-        <hezhenrui.version>1.0.0</hezhenrui.version>
+        <learn17.version>1.0.0</learn17.version>
         <common.version>1.0.0</common.version>
         <tk.mybatis.version>4.2.1</tk.mybatis.version>
         <swagger-core.version>1.0.0</swagger-core.version>
@@ -48,7 +48,6 @@
         <spring-cloud-alibaba.version>2021.0.4.0</spring-cloud-alibaba.version>
         <bootstrap.version>3.1.4</bootstrap.version>
         <knife4j.version>3.0.3</knife4j.version>
-        <nimbus-jose-jwt.version>9.23</nimbus-jose-jwt.version>
         <swagger-annotations3.version>2.2.3</swagger-annotations3.version>
         <swagger-annotations.version>1.6.7</swagger-annotations.version>
     </properties>
@@ -103,12 +102,6 @@
             </dependency>
 
             <dependency>
-                <groupId>com.nimbusds</groupId>
-                <artifactId>nimbus-jose-jwt</artifactId>
-                <version>${nimbus-jose-jwt.version}</version>
-            </dependency>
-
-            <dependency>
                 <groupId>org.apache.rocketmq</groupId>
                 <artifactId>rocketmq-spring-boot-starter</artifactId>
                 <version>${rocketmq.version}</version>
@@ -145,45 +138,45 @@
             </dependency>
 
             <dependency>
-                <groupId>com.hezhenrui</groupId>
+                <groupId>com.github</groupId>
                 <artifactId>learn17-api</artifactId>
-                <version>${hezhenrui.version}</version>
+                <version>${learn17.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.hezhenrui</groupId>
+                <groupId>com.github</groupId>
                 <artifactId>learn17-common</artifactId>
-                <version>${hezhenrui.version}</version>
+                <version>${learn17.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.hezhenrui</groupId>
+                <groupId>com.github</groupId>
                 <artifactId>learn17-core-zk</artifactId>
-                <version>${hezhenrui.version}</version>
+                <version>${learn17.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.hezhenrui</groupId>
+                <groupId>com.github</groupId>
                 <artifactId>learn17-core-redis</artifactId>
-                <version>${hezhenrui.version}</version>
+                <version>${learn17.version}</version>
             </dependency>
 
 <!--            <dependency>-->
-<!--                <groupId>com.hezhenrui</groupId>-->
+<!--                <groupId>com.github</groupId>-->
 <!--                <artifactId>learn17-core-swagger</artifactId>-->
-<!--                <version>${hezhenrui.version}</version>-->
+<!--                <version>${learn17.version}</version>-->
 <!--            </dependency>-->
 
             <dependency>
-                <groupId>com.hezhenrui</groupId>
+                <groupId>com.github</groupId>
                 <artifactId>learn17-core-thread</artifactId>
-                <version>${hezhenrui.version}</version>
+                <version>${learn17.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.hezhenrui</groupId>
+                <groupId>com.github</groupId>
                 <artifactId>learn17-core-db</artifactId>
-                <version>${hezhenrui.version}</version>
+                <version>${learn17.version}</version>
             </dependency>
 
             <dependency>

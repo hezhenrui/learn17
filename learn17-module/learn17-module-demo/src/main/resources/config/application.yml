@@ -13,8 +13,8 @@ logging:
   exception-conversion-word: '%wEx'
   level:
     root: info
-    com.hezhenrui.learn17.module.demo: debug
-    com.hezhenrui.learn17.core.db: debug
+    com.github.learn17.module.demo: debug
+    com.github.learn17.core.db: debug
   file:
     name: ${spring.application.name}.log
     path: ./logs/${spring.application.name}/
@@ -27,14 +27,14 @@ pagehelper:
   auto-runtime-dialect: true
 
 mybatis:
-  type-aliases-package: com.hezhenrui.learn17.module.demo.domain.*
+  type-aliases-package: com.github.learn17.module.demo.domain.*
   mapper-locations: classpath*:mapper/*.xml
   configuration:
     auto-mapping-behavior: partial
     map-underscore-to-camel-case: true
 
-hezhenrui:
+learn17:
   thread-core:
     keep-alive-time: 20000
-    thread-name-prefix: hezhenrui-demo-exec-
+    thread-name-prefix: learn17-demo-exec-
     capacity: 50

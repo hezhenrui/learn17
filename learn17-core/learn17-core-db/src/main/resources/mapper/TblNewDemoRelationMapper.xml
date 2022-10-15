@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hezhenrui.learn17.core.db.mapper.test.TblNewDemoRelationMapper">
-  <resultMap id="BaseResultMap" type="com.hezhenrui.learn17.common.po.test.TblNewDemoRelation">
+<mapper namespace="com.github.learn17.core.db.mapper.test.TblNewDemoRelationMapper">
+  <resultMap id="BaseResultMap" type="com.github.learn17.common.po.test.TblNewDemoRelation">
     <!--@mbg.generated generated on Sun Oct 02 14:41:11 CST 2022.-->
     <!--@Table test.tbl_new_demo_relation-->
     <id column="id" property="id" />

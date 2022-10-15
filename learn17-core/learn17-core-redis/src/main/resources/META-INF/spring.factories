@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.hezhenrui.learn17.core.redis.config.RedissonConfig
+com.github.learn17.core.redis.config.RedissonConfig
