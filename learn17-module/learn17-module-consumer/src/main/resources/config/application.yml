@@ -13,7 +13,7 @@ logging:
   exception-conversion-word: '%wEx'
   level:
     root: info
-    com.github.learn17.module.demo: debug
+    com.github.learn17.module.consumer: debug
     com.github.learn17.core.db: debug
   file:
     name: ${spring.application.name}.log
