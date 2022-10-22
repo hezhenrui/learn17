@@ -19,13 +19,6 @@ logging:
     name: ${spring.application.name}.log
     path: ./logs/${spring.application.name}/
 
-pagehelper:
-  reasonable: false
-  supportMethodsArguments: true
-  params: count=countSql
-  auto-dialect: true
-  auto-runtime-dialect: true
-
 mybatis:
   type-aliases-package: com.github.learn17.module.demo.domain.*
   mapper-locations: classpath*:mapper/*.xml

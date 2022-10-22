@@ -12,9 +12,9 @@ spring:
         namespace: accb151a-364f-4038-8d45-c66180ddb4b0
         extension-configs[0]:
           data-id: mysql-common-dev.yaml
-          group: dev
+          group: ${spring.profiles.active}
           refresh: true
         extension-configs[1]:
           data-id: feign-common-dev.yaml
-          group: dev
+          group: ${spring.profiles.active}
           refresh: true
