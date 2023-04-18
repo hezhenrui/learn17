@@ -1,3 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.github.learn17.common.annotation.RabbitManualListener,\
 com.github.learn17.common.utils.SpringUtil

@@ -20,8 +20,8 @@ public class RedissonConfig {
     @Bean
     public RedissonClient redissonClient(RedisProperties redisProperties) {
         Config config = new Config();
-        List<String> nodes = redisProperties.getCluster().getNodes();
-        config.useClusterServers().addNodeAddress(nodes.toArray(new String[0]));
+        String url = "redis://"+redisProperties.getHost()+":"+redisProperties.getPort();
+        config.useSingleServer().setAddress(url);
         return Redisson.create(config);
     }
 }

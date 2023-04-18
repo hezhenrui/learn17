@@ -4,9 +4,9 @@ spring:
       discovery:
         server-addr: http://localhost:8848
         namespace: accb151a-364f-4038-8d45-c66180ddb4b0
-        group: ${spring.profiles.active}
+        group: moudule
       config:
         server-addr: http://localhost:8848
-        file-extension: yaml
-        group: ${spring.profiles.active}
         namespace: accb151a-364f-4038-8d45-c66180ddb4b0
+        group: moudule
+        file-extension: yaml
